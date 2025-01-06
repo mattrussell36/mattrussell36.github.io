@@ -1,12 +1,208 @@
 <!doctype html>
 <html lang="en-US">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matthew Russell personal website</title>
-  <meta name="description" content="Website showing my resume">
-</head>
-<body>
-  <h1>matthewrussell.co</h1>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matthew Russell</title>
+    <meta name="description" content="Personal website of Matthew Russell">
+    <style>
+      :root {
+        --clr-bg: #fff;
+        --clr-text: #1a1a1a;
+        --clr-highlight: #2a63ca;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --clr-bg: #1a1a1a;
+          --clr-text: #f8f8f8;
+        }
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      svg {
+        fill: currentColor;
+      }
+
+      html {
+        height: 100%; 
+      }
+      
+      body {
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        margin: 0;
+        padding: 20px;
+        font-family: Georgia;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 1.6;
+        color: var(--clr-text);
+        background: var(--clr-bg);
+      }
+
+      main {
+        max-width: 65ch;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 500;
+      }
+
+      a {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        color: var(--clr-highlight);
+        transition: filter .1s;
+      }
+
+      a:hover {
+        filter: brightness(0.5);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 65ch;
+        margin: 0 auto;
+      }
+
+      .links {
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+        padding: 20px 0;
+      }
+
+      .links a {
+        text-decoration: none;
+      }
+
+      .links a svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+
+      #pics-trigger {
+        text-decoration: underline;
+        text-underline-offset: 5px;
+      }
+
+      #pics-container {
+        display: flex;
+        flex-wrap: wrap;
+        visibility: hidden;
+        overflow: hidden;
+        height: 0;
+      }
+
+      #pics-container img {
+        width: 50%;
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      #pics-container.show {
+        visibility: visible;
+        height: auto;
+      }
+
+      #pics-container.show img {
+        animation: popIn 1s forwards;
+      }
+
+      @media (min-width: 620px) {
+        body {
+          padding: 100px 20px;
+        }
+
+        #pics-container img {
+          width: 33.33%;
+        }
+      }
+
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <h1>Matthew Russell</h1>
+    </header>
+    <main class="container">
+      <p>I'm a developer living in Los Angeles, CA.</p>
+      <p>Currently I spend most of my time working on a new platform I've created to help connect emerging brands with local retailers. It's not live and doesn't have a name yet. 🚧</p>
+      <p>For the past 6 years I've been leading frontend development for a fintech startup in the Web3 space called <a href="https://vega.xyz/" target="_blank" rel="noopener noreferrer">Vega</a>. During my time there, I gained valuable experience in building complex, data-centric web applications.</p>
+      <p>Prior to that I worked for different digital media agencies such as <a href="https://www.zonedigital.com/" target="_blank" rel="noopener noreferrer">Zone Digital</a>, <a href="https://www.linkedin.com/company/head-london/" target="_blank" rel="noopener noreferrer">Head London</a>, and <a href="https://www.accenture.com/us-en" target="_blank" rel="noopener noreferrer">Accenture</a>.</p>
+      <p>In my free time I love water sports and have spent a lot of time <span id="pics-trigger">flying kites</span>. 🪁</p>
+      <div id="pics-container">
+        <img loading="lazy" src="./images/kite1.jpg" />
+        <img loading="lazy" src="./images/kite6.jpg" />
+        <img loading="lazy" src="./images/kite3.jpg" />
+        <img loading="lazy" src="./images/kite4.jpg" />
+        <img loading="lazy" src="./images/kite5.jpg" />
+        <img loading="lazy" src="./images/kite2.jpg" />
+      </div>
+    </main>
+    <footer class="container links">
+      <a href="mailto:mattrussell36@gmail.com" target="_blank" rel="noopener noreferrer">
+        <span class="sr-only">Email</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M2.003 5.884 10 9.882l7.997-3.998A2 2 0 0 0 16 4H4a2 2 0 0 0-1.997 1.884z"></path>
+          <path d="m18 8.118-8 4-8-4V14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.118z"></path>
+        </svg>
+      </a>
+      <a href="https://github.com/mattrussell36" target="_blank" rel="noopener noreferrer">
+        <span class="sr-only">Github</span>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/matthew-russell-67854860" target="_blank" rel="noopener noreferrer">
+        <span class="sr-only">LinkedIn</span>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+        </svg>
+      </a>
+    </footer>
+    <script>
+      let shown = false;
+      var trigger = document.getElementById('pics-trigger')
+      var container = document.getElementById('pics-container')
+
+      trigger.addEventListener('mouseover', (e) => {
+        if (shown) return;
+
+        container.querySelectorAll('img').forEach((el, i) => {
+          el.style.animationDelay = `${0.1 * i}s`
+        });
+        container.classList.add('show');
+
+        shown = true;
+      });
+    </script>
+  </body>
 </html>
